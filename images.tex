@@ -1,0 +1,569 @@
+\batchmode
+\documentclass[12pt,a4paper]{article}
+\RequirePackage{ifthen}
+
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
+
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage{longtable}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+\definecolor{mental}{RGB}{30,100,150}
+\definecolor{social}{RGB}{200,120,30}
+\definecolor{ambiental}{RGB}{30,120,50}
+\definecolor{modus}{RGB}{100,50,150}
+\definecolor{alerta}{RGB}{200,0,0}
+\definecolor{dados}{RGB}{0,100,100}
+\definecolor{wulf}{RGB}{150,50,100}
+
+\title{WebQuest: Quanto custa o que você consome?}
+\author{Assinaturas digitais: dinheiro, gente e planeta -- \\
+Uma perspectiva antropológica a partir de Christoph Wulf}
+\date{}
+
+
+
+
+
+\makeatletter
+
+\makeatletter
+\count@=\the\catcode`\_ \catcode`\_=8 
+\newenvironment{tex2html_wrap}{}{}%
+\catcode`\<=12\catcode`\_=\count@
+\newcommand{\providedcommand}[1]{\expandafter\providecommand\csname #1\endcsname}%
+\newcommand{\renewedcommand}[1]{\expandafter\providecommand\csname #1\endcsname{}%
+  \expandafter\renewcommand\csname #1\endcsname}%
+\newcommand{\newedenvironment}[1]{\newenvironment{#1}{}{}\renewenvironment{#1}}%
+\let\newedcommand\renewedcommand
+\let\renewedenvironment\newedenvironment
+\makeatother
+\let\mathon=$
+\let\mathoff=$
+\ifx\AtBeginDocument\undefined \newcommand{\AtBeginDocument}[1]{}\fi
+\newbox\sizebox
+\setlength{\hoffset}{0pt}\setlength{\voffset}{0pt}
+\addtolength{\textheight}{\footskip}\setlength{\footskip}{0pt}
+\addtolength{\textheight}{\topmargin}\setlength{\topmargin}{0pt}
+\addtolength{\textheight}{\headheight}\setlength{\headheight}{0pt}
+\addtolength{\textheight}{\headsep}\setlength{\headsep}{0pt}
+\newwrite\lthtmlwrite
+\makeatletter
+\let\realnormalsize=\normalsize
+\global\topskip=2sp
+\def\preveqno{}\let\real@float=\@float \let\realend@float=\end@float
+\def\@float{\let\@savefreelist\@freelist\real@float}
+\def\liih@math{\ifmmode$\else\bad@math\fi}
+\def\end@float{\realend@float\global\let\@freelist\@savefreelist}
+\let\real@dbflt=\@dbflt \let\end@dblfloat=\end@float
+\let\@largefloatcheck=\relax
+\let\if@boxedmulticols=\iftrue
+\def\@dbflt{\let\@savefreelist\@freelist\real@dbflt}
+\def\adjustnormalsize{\def\normalsize{\mathsurround=0pt \realnormalsize
+ \parindent=0pt\abovedisplayskip=0pt\belowdisplayskip=0pt}%
+ \def\phantompar{\csname par\endcsname}\normalsize}%
+\def\lthtmltypeout#1{{\let\protect\string \immediate\write\lthtmlwrite{#1}}}%
+\usepackage[tightpage,active]{preview}
+\PreviewBorder=0.5bp
+\newbox\lthtmlPageBox
+\newdimen\lthtmlCropMarkHeight
+\newdimen\lthtmlCropMarkDepth
+\long\def\lthtmlTightVBoxA#1{\def\lthtmllabel{#1}
+    \setbox\lthtmlPageBox\vbox\bgroup\catcode`\_=8 }%
+\long\def\lthtmlTightVBoxZ{\egroup
+    \lthtmlCropMarkHeight=\ht\lthtmlPageBox \advance \lthtmlCropMarkHeight 6pt
+    \lthtmlCropMarkDepth=\dp\lthtmlPageBox
+    \lthtmltypeout{^^J:\lthtmllabel:lthtmlCropMarkHeight:=\the\lthtmlCropMarkHeight}%
+    \lthtmltypeout{^^J:\lthtmllabel:lthtmlCropMarkDepth:=\the\lthtmlCropMarkDepth:1ex:=\the \dimexpr 1ex}%
+    \begin{preview}\copy\lthtmlPageBox\end{preview}}%
+\long\def\lthtmlTightFBoxA#1{\def\lthtmllabel{#1}%
+    \adjustnormalsize\setbox\lthtmlPageBox=\vbox\bgroup\hbox\bgroup %
+    \let\ifinner=\iffalse \let\)\liih@math %
+    \bgroup\catcode`\_=8 }%
+\long\def\lthtmlTightFBoxZ{\egroup\egroup
+    \@next\next\@currlist{}{\def\next{\voidb@x}}%
+    \expandafter\box\next\egroup %
+    \lthtmlCropMarkHeight=\ht\lthtmlPageBox \advance \lthtmlCropMarkHeight 6pt
+    \lthtmlCropMarkDepth=\dp\lthtmlPageBox
+    \lthtmltypeout{^^J:\lthtmllabel:lthtmlCropMarkHeight:=\the\lthtmlCropMarkHeight}%
+    \lthtmltypeout{^^J:\lthtmllabel:lthtmlCropMarkDepth:=\the\lthtmlCropMarkDepth:1ex:=\the \dimexpr 1ex}%
+    \begin{preview}\copy\lthtmlPageBox\end{preview}}%
+    \long\def\lthtmlinlinemathA#1#2\lthtmlindisplaymathZ{\lthtmlTightVBoxA{#1}{\hbox\bgroup#2\egroup}\lthtmlTightVBoxZ}
+    \def\lthtmlinlineA#1#2\lthtmlinlineZ{\lthtmlTightVBoxA{#1}{\hbox\bgroup#2\egroup}\lthtmlTightVBoxZ}
+    \long\def\lthtmldisplayA#1#2\lthtmldisplayZ{\lthtmlTightVBoxA{#1}{#2}\lthtmlTightVBoxZ}
+    \long\def\lthtmldisplayB#1#2\lthtmldisplayZ{\\edef\preveqno{(\theequation)}%
+        \lthtmlTightVBoxA{#1}{\let\@eqnnum\relax#2}\lthtmlTightVBoxZ}
+    \long\def\lthtmlfigureA#1{\let\@savefreelist\@freelist
+        \lthtmlTightFBoxA{#1}}
+    \long\def\lthtmlfigureZ{
+        \lthtmlTightFBoxZ\global\let\@freelist\@savefreelist}
+    \long\def\lthtmlpictureA#1{\let\@savefreelist\@freelist
+        \lthtmlTightVBoxA{#1}}
+    \long\def\lthtmlpictureZ{
+        \lthtmlTightVBoxZ\global\let\@freelist\@savefreelist}
+\def\lthtmlcheckvsize{\ifdim\ht\sizebox<\vsize 
+  \ifdim\wd\sizebox<\hsize\expandafter\hfill\fi \expandafter\vfill
+  \else\expandafter\vss\fi}%
+\providecommand{\selectlanguage}[1]{}%
+\makeatletter \tracingstats = 1 
+\providecommand{\Alpha}{\textrm{A}}
+\providecommand{\Beta}{\textrm{B}}
+\providecommand{\Chi}{\textrm{X}}
+\providecommand{\Epsilon}{\textrm{E}}
+\providecommand{\Eta}{\textrm{H}}
+\providecommand{\Iota}{\textrm{J}}
+\providecommand{\Kappa}{\textrm{K}}
+\providecommand{\Mu}{\textrm{M}}
+\providecommand{\Nu}{\textrm{N}}
+\providecommand{\Omicron}{\textrm{O}}
+\providecommand{\Rho}{\textrm{R}}
+\providecommand{\Tau}{\textrm{T}}
+\providecommand{\Zeta}{\textrm{Z}}
+\providecommand{\omicron}{\textrm{o}}
+
+
+\begin{document}
+\pagestyle{empty}\thispagestyle{empty}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength hsize=\the\hsize}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength vsize=\the\vsize}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength hoffset=\the\hoffset}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength voffset=\the\voffset}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength topmargin=\the\topmargin}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength topskip=\the\topskip}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength headheight=\the\headheight}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength headsep=\the\headsep}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength parskip=\the\parskip}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength oddsidemargin=\the\oddsidemargin}\lthtmltypeout{}%
+\makeatletter
+\if@twoside\lthtmltypeout{latex2htmlLength evensidemargin=\the\evensidemargin}%
+\else\lthtmltypeout{latex2htmlLength evensidemargin=\the\oddsidemargin}\fi%
+\lthtmltypeout{}%
+\makeatother
+\setcounter{page}{1}
+\onecolumn
+
+% !!! IMAGES START HERE !!!
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline671}%
+\fbox{\begin{minipage}{0.9\textwidth}
+\begin{center}\textbf{\Large WebQuest: "Quanto custa o que você consome?"}
+\end{center}
+\par
+\textbf{Título completo:} Assinaturas digitais: quanto custa, de verdade, o que você consome? -- Uma WebQuest sobre dinheiro, gente e planeta
+\par
+\textbf{Público-alvo:} 9º ano do Ensino Fundamental ao 2º ano do Ensino Médio
+\par
+\textbf{Disciplinas integradas:} Matemática, Língua Portuguesa, Ciências da Natureza, Geografia, Educação Financeira
+\par
+\textbf{Tempo estimado:} 4 aulas de 50 minutos
+\end{minipage}}%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{section}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline683}%
+\fbox{\begin{minipage}{0.85\textwidth}
+\begin{center}\textbf{\Large Por que esta WebQuest é importante hoje?}
+\end{center}
+\par
+Como Christoph Wulf (2022) nos ensina, \textbf{vivemos no Antropoceno, a Era dos Humanos}. É uma era marcada pela influência destrutiva dos seres humanos no planeta. Estamos subjugando a natureza, explorando-a imprudentemente e destruindo os fundamentos de nossas próprias vidas.
+\par
+\begin{quote}
+\textit{"A educação é um componente constitutivo do ser humano; e o conhecimento do ser humano é um elemento constitutivo da educação. Os dois estão inseparavelmente entrelaçados."} (Wulf, 2022, p. 16)
+\end{quote}
+\par
+Nesta WebQuest, você não vai apenas calcular quanto gasta com streaming. Vai \textbf{compreender como a cultura digital está transformando sua vida}, sua relação com o dinheiro, com os outros e com o planeta. Vai pensar sobre \textbf{o que significa ser humano na Era Digital.}
+\end{minipage}}%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline687}%
+\fbox{\begin{minipage}{0.85\textwidth}
+\begin{center}\textbf{\Large A pergunta central desta WebQuest é:}
+\end{center}
+\textit{O que estamos fazendo com nosso tempo, dinheiro, atenção e planeta ao assinar tantos serviços?}
+\end{minipage}}%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline693}%
+\fbox{\begin{minipage}{0.85\textwidth}
+\begin{center}\textbf{\Large E, como diria Wulf:}
+\end{center}
+\textit{Como a digitalização e a inteligência artificial estão modificando os fundamentos de nossas condições mundiais sociais e culturais e determinando nosso entendimento de mundo e o nosso eu?} (Wulf, 2022, p. 7)
+\end{minipage}}%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline709}%
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{center}\textcolor{alerta}{\textbf{\Large O CONSUMO ENERGÉTICO DOS DATA CENTERS}}
+\end{center}
+\par
+De acordo com o relatório \textbf{Electricity 2024 -- Analysis and Forecast to 2026} da Agência Internacional de Energia (IEA):
+\par
+\begin{tabular}{|p{4cm}|p{6cm}|}
+\hline
+\textbf{Indicador} & \textbf{Valor} \\
+\hline
+Consumo global de data centers (2022) & 460 TWh (2\% da demanda elétrica global) \\
+\hline
+Consumo previsto (2026) & \textcolor{alerta}{MAIS DE 1.000 TWh} \\
+\hline
+\textbf{Crescimento} & \textbf{MAIS QUE DOBRA em apenas 4 anos} \\
+\hline
+Equivalência & Todo o consumo elétrico do \textbf{JAPÃO} (3ª maior economia do mundo) \\
+\hline
+\end{tabular}
+\par
+\vspace{0.5cm}
+\par
+\textbf{Cenários da IEA para 2026:}
+\begin{itemize}
+    \item Cenário conservador: 650 TWh (Energia equivalente à Suécia)
+    \item Cenário base: 1.000+ TWh (Energia equivalente ao Japão)
+    \item Cenário alto: 1.050 TWh (Energia equivalente à Alemanha)
+\end{itemize}
+\par
+\vspace{0.3cm}
+\textit{Fonte: Agência Internacional de Energia (IEA) - Electricity 2024}
+\end{minipage}}%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline715}%
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{center}\textcolor{alerta}{\textbf{\Large O MOTOR DA EXPLOSÃO: INTELIGÊNCIA ARTIFICIAL}}
+\end{center}
+\par
+\begin{tabular}{|p{4cm}|p{6cm}|}
+\hline
+\textbf{Comparação} & \textbf{Consumo de energia} \\
+\hline
+Busca tradicional no Google & 0,3 watt-hora \\
+\hline
+Consulta com IA generativa (ChatGPT, Gemini, Claude) & 3 watt-hora \\
+\par
+\hline
+\end{tabular}
+\par
+\vspace{0.5cm}
+\par
+\textbf{Fatores que empurram o consumo para cima:}
+\begin{enumerate}
+    \item Aumento do processamento por IA generativa
+    \item Necessidade crescente de resfriamento dos servidores
+    \item Nova onda de mineração de criptomoedas (160 TWh previstos para 2026)
+\end{enumerate}
+\par
+\end{minipage}}%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline721}%
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{center}\textcolor{dados}{\textbf{\Large O IMPACTO POR PAÍS}}
+\end{center}
+\par
+\textbf{ESTADOS UNIDOS:}
+\begin{itemize}
+    \item Concentra 33\% de todos os data centers do planeta (mais de 8.000 centros)
+    \item Consumo: 200 TWh (2022) → 260 TWh (2026)
+    \item Até 2030: data centers serão responsáveis por \textbf{50\% de todo o crescimento elétrico americano}
+\end{itemize}
+\par
+\textbf{IRLANDA: o caso extremo}
+\begin{itemize}
+    \item 2022: data centers consumiam 17\% da eletricidade do país
+    \item 2026: projeção de \textbf{32\%} -- um terço de toda a energia elétrica da Irlanda
+    \item 82 data centers operacionais + 14 em construção + 40 aprovados
+\end{itemize}
+\par
+\textbf{BRASIL:}
+\begin{itemize}
+    \item Amazon AWS, Microsoft Azure e Google Cloud expandindo em SP (Vinhedo, Hortolândia, Tamboré)
+    \item Consumo de data centers: 304 MW (2026) → 3.457 MW (2030) = \textbf{CRESCIMENTO DE 11 VEZES}
+    \item Investimento previsto: R\$ 60 bilhões até 2030 (Thymos Energia)
+    \item Paradoxo: Brasil tem energia solar sobrando ao meio-dia, mas sem armazenamento
+    \item Como voçe aluno armazenaria essa energia solar que sobra no Brasil ao meio-dia
+\end{itemize}
+\end{minipage}}%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline727}%
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{center}\textcolor{alerta}{\textbf{\Large A COROAÇÃO DA IA: FOME DE ENERGIA}}
+\end{center}
+\par
+O grande catalisador da virada é a IA generativa. Antes de 2023, a previsão era que os data centers crescessem gradualmente. Mas o lançamento do ChatGPT no fim de 2022 mudou totalmente o cenário.
+\par
+\textbf{Projeções futuras:}
+\begin{itemize}
+    \item Em janeiro de 2025, a IEA atualizou seus modelos: consumo de até \textbf{1.637 TWh em 2030} no cenário mais otimista
+    \item A chamada \textbf{"IA agentic"} (agentes autônomos) pode triplicar o consumo de eletricidade dos data centers existentes
+    \item Empresas como Microsoft, Amazon, Google e Meta buscam fontes próprias de energia: geotermia, nuclear pequeno modular e até reabertura de usinas a carvão
+\end{itemize}
+\par
+\textit{"A pergunta que fica é: se os data centers de IA vão consumir tanta energia quanto o Japão em 2026 e potencialmente o triplo até 2030, quem vai pagar a conta?"}
+\begin{itemize}
+    \item \textbf{Pergunta}: O que é energia geotermica?
+\end{itemize}
+\par
+\end{minipage}}%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline757}%
+\fbox{\begin{minipage}{0.9\textwidth}
+\begin{center}\textcolor{obsolescencia}{\textbf{⚙️ O CICLO DA OBSOLESCÊNCIA PROGRAMADA}}
+\end{center}
+\par
+\begin{tabular}{|p{2.5cm}|p{6cm}|}
+\hline
+\textbf{Fase} & \textbf{O que significa} \\
+\hline
+Duração & Produtos são feitos para durar pouco (celular lento, lâmpada que queima rápido) \\
+\hline
+Consumo & Você é forçado a comprar sempre, mesmo sem querer \\
+\hline
+Descartar & O produto velho vira lixo \\
+\hline
+Reciclagem & (Se acontece) consome energia e água -- mas só 20\% do lixo eletrônico é reciclado \\
+\hline
+Matéria-prima natural & Minérios, petróleo, madeira, água são extraídos da natureza \\
+\hline
+Água & Usada na produção e contamina rios \\
+\hline
+Energia & Usada na produção, transporte, armazenamento \\
+\hline
+Dióxido de carbono & Emitido na produção e transporte -- aquece o planeta \\
+\hline
+Exploração da matéria-prima & Mineração predatória, trabalho infantil, desmatamento (ex: coltan no Congo) \\
+\hline
+Descarte final & Aterro sanitário, lixão, incineração, exportação para países pobres \\
+\hline
+\end{tabular}
+\par
+\textit{"O streaming não é imaterial. Ele depende desse ciclo inteiro."} \\
+\textbf{Obsolescência programada} (ou planejada) é a estratégia industrial que encurta intencionalmente a vida útil de um produto.
+\par
+\end{minipage}}%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline980}%
+$ \rightarrow$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{section}
+\stepcounter{section}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline841}%
+\fbox{\begin{minipage}{0.9\textwidth}
+\textbf{Como descobrir:}
+\begin{enumerate}
+    \item Pegue a \textbf{conta de luz} da sua casa (pode ser a última que chegou).
+    \item Procure o campo \textbf{"Consumo (kWh)"} ou \textbf{"Energia Elétrica (kWh)"}.
+    \item Anote o valor: \_\_\_\_\_\_\_\_\_\_ kWh (consumo do mês)
+\end{enumerate}
+\par
+\textbf{Não tem a conta em mãos?} Pergunte para um responsável:
+\begin{itemize}
+    \item Casa pequena (1-2 pessoas): ~150 kWh/mês
+    \item Casa média (3-4 pessoas): ~250 kWh/mês
+    \item Casa grande (5+ pessoas): ~400 kWh/mês
+\end{itemize}
+\end{minipage}}%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline855}%
+\fbox{\begin{minipage}{0.9\textwidth}
+\begin{center}\textbf{\Large QUANTAS CASAS CABEM EM 1.000 TWh?}
+\end{center}
+\par
+\textbf{Fórmula:}
+\begin{quote}
+\textit{Número de casas = Consumo dos data centers ÷ Consumo da sua casa}
+\end{quote}
+\par
+\textbf{Exemplo:}
+\begin{itemize}
+    \item Consumo data centers (2026): 1.000.000.000.000 kWh
+    \item Consumo da sua casa: 250 kWh/mês = 3.000 kWh/ano
+    \item \textbf{Número de casas = 1.000.000.000.000 ÷ 3.000 = 333.333.333 casas}
+\end{itemize}
+\par
+\textbf{Agora calcule com seus números:}
+\begin{itemize}
+    \item Consumo data centers: \_\_\_\_\_\_\_\_\_\_ kWh
+    \item Consumo da sua casa (ano): \_\_\_\_\_\_\_\_\_\_ kWh
+    \item \textbf{Número de casas equivalentes: \_\_\_\_\_\_\_\_\_\_}
+\end{itemize}
+\par
+\textit{Isso significa que os data centers consomem tanta energia quanto \textbf{333 milhões de casas} como a sua!}
+\end{minipage}}%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline881}%
+\fbox{\begin{minipage}{0.9\textwidth}
+\begin{center}\textcolor{alerta}{\textbf{1.000 TWh = 1.000.000.000.000 kWh}}
+\end{center}
+\end{minipage}}%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline901}%
+\fbox{\begin{minipage}{0.9\textwidth}
+\begin{center}\textbf{\Large QUANTO VOCÊ CONSUME?}
+\end{center}
+\par
+\textbf{Passo 1:} Quantas horas por dia você fica no celular? \_\_\_\_\_\_ horas
+\par
+\textbf{Passo 2:} Quanto desse tempo é streaming (Netflix, YouTube, TikTok)? \_\_\_\_\_\_ horas
+\par
+\textbf{Passo 3:} Multiplique por 30 para saber as horas por mês: \_\_\_\_\_\_ horas/mês
+\par
+\textbf{Passo 4:} Consumo por hora em diferentes resoluções:
+\begin{itemize}
+    \item 480p: 0,035 kWh/hora
+    \item 1080p: 0,065 kWh/hora
+    \item 4K: 0,175 kWh/hora
+\end{itemize}
+\par
+\textbf{Passo 5:} Seu consumo mensal = horas/mês × consumo por hora = \_\_\_\_\_\_ kWh
+\par
+\textbf{Passo 6:} Custo mensal = consumo × R\$ 0,80 = R\$ \_\_\_\_\_\_
+\par
+\textbf{Passo 7:} Custo anual = custo mensal × 12 = R\$ \_\_\_\_\_\_
+\end{minipage}}%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline917}%
+\fbox{\begin{minipage}{0.95\textwidth}
+\begin{center}\textcolor{dados}{\textbf{\Large CONSUMO DE ENERGIA DOS DATA CENTERS NO BRASIL}}
+\end{center}
+\par
+De acordo com a \textbf{1ª Revisão Quadrimestral das Previsões de Carga para o Planejamento Anual da Operação Energética 2026–2030} (CCEE/ONS/EPE):
+\par
+\begin{tabular}{|p{4cm}|p{5cm}|}
+\hline
+\textbf{Indicador} & \textbf{Valor} \\
+\hline
+Consumo atual de data centers (2026) & 304 MW médios \\
+\hline
+Consumo previsto (2030) & 3.457 MW médios \\
+\hline
+\textbf{Crescimento} & \textbf{MAIS DE 11 VEZES em 4 anos} \\
+\hline
+Investimento previsto até 2030 (Thymos Energia) & R\$ 60 bilhões \\
+\hline
+Data centers em operação no Brasil & Mais de 130 \\
+\hline
+\end{tabular}
+\par
+\vspace{0.5cm}
+\par
+\textbf{Onde estão os novos data centers?} Regiões Sudeste, Centro-Oeste, Nordeste e Sul.
+\par
+\textbf{Quantos projetos?} 22 pedidos de acesso à Rede Básica com contratos assinados, sendo 18 já autorizados.
+\par
+\textbf{Efeito colateral positivo:} Os data centers podem ajudar a diminuir os \textbf{cortes de geração no Nordeste} (usinas eólicas e solares que precisam ser desligadas por excesso de oferta), aumentando o consumo regional.
+\par
+\vspace{0.3cm}
+\textit{Fonte: CCEE/ONS/EPE - 1ª Revisão Quadrimestral 2026-2030; Thymos Energia.}
+\end{minipage}}%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{section}
+\stepcounter{section}
+\stepcounter{section}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline943}%
+\fbox{\begin{minipage}{0.85\textwidth}
+\begin{center}\textbf{\Large O que Christoph Wulf nos ensina}
+\end{center}
+\par
+\begin{tabular}{|p{4cm}|p{5cm}|}
+\hline
+\textbf{Conceito} & \textbf{O que significa para sua vida} \\
+\hline
+Antropoceno & A Era dos Humanos – você é responsável pelo futuro do planeta \\
+\hline
+Nativos digitais & Você nasceu na cultura digital – mas isso não significa que você a entende \\
+\hline
+Prosumer & Você produz enquanto consome – você é parte da indústria cultural \\
+\hline
+Teoria Ator-Rede & Máquinas e humanos agem juntos – você não está sozinho(a) na tela \\
+\hline
+Repetição/Mimesis & Seus hábitos repetitivos te moldam – o que você está repetindo? \\
+\hline
+Ética da IA & \textit{"Uma nova ética no uso de máquinas é necessária."} \\
+\hline
+\end{tabular}
+\par
+\textit{"O que é necessário é uma \textbf{nova ética} no uso de máquinas. As pessoas precisam aprender como a inteligência artificial funciona e como \textbf{integrar princípios éticos} em seu comportamento."} (Wulf, 2022, p. 22)
+\end{minipage}}%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline947}%
+\fbox{\begin{minipage}{0.85\textwidth}
+\begin{center}\textcolor{alerta}{\textbf{\Large A PERGUNTA QUE FICA}}
+\end{center}
+\par
+\textit{Se os data centers de IA vão consumir tanta energia quanto o Japão em 2026 e potencialmente o triplo até 2030, quem vai pagar a conta?}
+\par
+\textit{Os bilhões de usuários que clicam grátis no ChatGPT? As companhias que cobram US\$ 20 por mês? Ou os países que terão de construir usinas inteiras só para sustentar essa nova economia?}
+\par
+\textit{E o Brasil, que tem energia limpa e sobrando ao meio-dia, vai conseguir capturar essa onda antes que outros países dominem o jogo?}
+\end{minipage}}%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+
+\end{document}
