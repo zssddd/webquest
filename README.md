@@ -79,7 +79,7 @@ A WebQuest inclui dados atuais e impactantes sobre:
 
 **Pedro Binatti**
 - Universidade Federal de Mato Grosso
-- 📧 pedro.binatt@soufmt.br
+- 📧 pedro.binatti@soufmt.br
 
 ---
 
