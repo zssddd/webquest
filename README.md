@@ -89,20 +89,4 @@ Este projeto está sob a licença **GPL-2.0**.
 
 ---
 
-## 📸 Capturas de tela
 
-![WebQuest - Página inicial](screenshot.png)
-
----
-
-## 🚀 Como executar localmente
-
-```bash
-# Clone o repositório
-git clone https://github.com/zssddd/webquest.git
-
-# Entre na pasta
-cd webquest
-
-# Abra o index.html no navegador
-google-chrome index.html
